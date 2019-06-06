@@ -35,6 +35,6 @@
           destroy-method="close"
           p:driverClassName="oracle.jdbc.driver.OracleDriver"
           p:url="jdbc:oracle:thin:@nullmaster.iptime.org:1521:xe"
-          p:username="project02" p:password="project02" />
+          p:username="project01" p:password="project01" />
 
    </beans>
