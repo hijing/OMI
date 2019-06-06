@@ -1,0 +1,287 @@
+@charset "EUC-KR";
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,800&subset=korean');
+
+#top1 {
+		font-family: "Nanum Gothic", sans-serif;
+		font-size: 80px;
+		font-weight: 800;
+		color:#486AAE;
+		margin:0px;
+		padding:0px;
+		text-decoration:none;
+		display: inline-block;
+		}
+		
+#top2 {
+		font-family: "Nanum Gothic", sans-serif;
+		font-size: 20px;
+		font-weight: 800;
+		color:#464646;
+		margin:0px;
+		padding:0px;
+		text-decoration:none;
+		display:inline-block;
+		}
+		
+#topLogin {
+		font-family: "Nanum Gothic", sans-serif;
+		font-size: 14px;
+		font-weight: 800;
+		color:#464646;
+		margin:0px;
+		padding:0px;
+		text-decoration:none;
+		display:inline-block;
+		}
+
+#topMSG1 {
+		font-family: "Nanum Gothic", sans-serif;
+		font-size: 15px;
+		font-weight: 400;
+		color:#464646;
+		margin:0px;
+		padding:0px;
+		text-decoration:none;
+		display:inline-block;
+		}
+		
+#topMSG2 {
+		font-family: "Nanum Gothic", sans-serif;
+		font-size: 15px;
+		font-weight: 400;
+		color:#486AAE;
+		margin:0px;
+		padding:0px;
+		text-decoration:none;
+		display:inline-block;
+		}
+		
+#topLogin:hover {
+	
+	color:#486AAE;
+}
+
+#bottom1 {
+		font-family: "Nanum Gothic", sans-serif;
+		font-size: 40px;
+		font-weight: 800;
+		color:#486AAE;
+		margin:0px;
+		padding:0px;
+		text-decoration:none;
+		display: inline-block;
+		}
+		
+#bottom2 {
+		font-family: "Nanum Gothic", sans-serif;
+		font-size: 15px;
+		font-weight: 400;
+		color:#464646;
+		margin:0px;
+		padding:0px;
+		text-decoration:none;
+		display:inline-block;
+		}
+		
+#searchText1{
+		font-family: "Nanum Gothic", sans-serif;
+		font-size: 20px;
+		font-weight: 800;
+		color:#464646;
+		margin:0px;
+		padding:0px;
+		text-decoration:none;
+		display:inline-block;
+}
+
+#searchText2{
+		font-family: "Nanum Gothic", sans-serif;
+		font-size: 23px;
+		font-weight: 800;
+		color:#486AAE;
+		margin:0px;
+		padding:0px;
+		text-decoration:none;
+		display:inline-block;
+}
+
+#searchText3{
+		font-family: "Nanum Gothic", sans-serif;
+		font-size: 15px;
+		font-weight: 400;
+		color:#464646;
+		margin:0px;
+		padding:0px;
+		text-decoration:none;
+		display:inline-block;
+}
+
+.map2Text1{
+		font-family: "Nanum Gothic", sans-serif;
+		font-size: 15px;
+		font-weight: 400;
+		color:#464646;
+		margin:0px;
+		padding:0px;
+		text-decoration:none;
+		display:inline-block;
+}
+
+.map2Text2{
+		font-family: "Nanum Gothic", sans-serif;
+		font-size: 17px;
+		font-weight: 400;
+		color:#486AAE;
+		margin:0px;
+		padding:0px;
+		text-decoration:none;
+		display:inline-block;
+}
+
+#submit {
+	width:80px;
+    background-color: #486AAE;
+    border: none;
+    color:#fff;
+    padding: 12px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    margin: 4px;
+    border-radius:10px;
+    cursor: pointer;	
+}
+
+#submit:hover {
+	background-color:#EAEAEA;
+	color:#486AAE;
+}
+
+#search {
+	width:500px;
+	margin:0px;
+	padding:10px 10px;
+	border: solid 2px #EAEAEA;
+	border-radius:7px;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+}
+
+#search:focus {
+	border: solid 2px #486AAE;
+}
+
+.style {
+	font-family: "Nanum Gothic", sans-serif;
+	width: 150px;
+    height: 30px;
+    padding-left: 5px;
+    font-size: 15px;
+    color:#000;
+    border: 1px solid #486AAE;
+    border-radius: 3px;
+ }
+
+#load {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	display: block;
+	opacity: 0.8;
+	background: white;
+	z-index: 99;
+	text-align: center;
+}
+
+#load > img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 100;
+}
+
+.tText{
+	font-family: "Nanum Gothic", sans-serif;
+	font-size: 15px;
+	font-weight: 400;
+	color:#464646;
+	margin:0px;
+	padding:0px;
+	text-decoration:none;
+	display:inline-block;
+}
+
+.tText:hover{
+	font-family: "Nanum Gothic", sans-serif;
+	font-size: 15px;
+	font-weight: 400;
+	color:#486AAE;
+	margin:0px;
+	padding:0px;
+	text-decoration:none;
+	display:inline-block;
+}
+
+.tText2{
+	font-family: "Nanum Gothic", sans-serif;
+	font-size: 15px;
+	font-weight: 400;
+	color:#464646;
+	margin:0px;
+	padding:0px;
+	text-decoration:none;
+}
+
+.tTextTop{
+	font-family: "Nanum Gothic", sans-serif;
+	font-size: 15px;
+	font-weight: 400;
+	color:#486AAE;
+	margin:0px;
+	padding:0px;
+	text-decoration:none;
+}
+
+.tBack{
+	background : #f0f6f9;
+	color:#486AAE;
+}
+
+.tcontent{
+	border-collapse:collapse;
+}
+
+.bluetop {
+  border-collapse: collapse;
+  border-top: 2px solid #486AAE;
+  background:#fff;
+}  
+.bluetop th {
+  color: #486AAE;
+  background: #f0f6f9;
+}
+.bluetop th, .bluetop td {
+  border: 1px solid #ddd;
+}
+.bluetop th:first-child, .bluetop td:first-child {
+  border-left: 0;
+}
+.bluetop th:last-child, .bluetop td:last-child {
+  border-right: 0;
+}
+
+textarea {
+    border: none;
+    width: 100%;
+    -webkit-box-sizing: border-box; /* <=iOS4, <= Android  2.3 */
+       -moz-box-sizing: border-box; /* FF1+ */
+            box-sizing: border-box; /* Chrome, IE8, Opera, Safari 5.1*/
+}
+textarea:focus{
+	outline:none;
+}

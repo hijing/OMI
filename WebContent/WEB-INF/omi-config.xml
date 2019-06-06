@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+   <typeAliases>
+      <typeAlias type="omi.bean.OmiVO" alias="omiVO"/>
+      <typeAlias alias="traffic3VO" type="omi.bean.traffic3VO"/>
+      <typeAlias alias="geoInfoVO" type="omi.bean.geoInfoVO"/>
+      <typeAlias type="board.bean.BoardVO" alias="boardVO" />
+   </typeAliases>
+   <mappers>
+      <mapper resource="/sql/omiSQL.xml"/>
+   </mappers>
+  
+</configuration>

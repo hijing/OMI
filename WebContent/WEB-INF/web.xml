@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <filter>	<!-- spring에서 post방식 통합 인코딩 방법 -->
+  	<filter-name>encodingFilter</filter-name>
+  	<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+  	<init-param>
+  		<param-name>encoding</param-name>
+  		<param-value>UTF-8</param-value>
+  	</init-param>
+  </filter>
+  <filter-mapping>
+  	<filter-name>encodingFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <!-- controller 설정 태그 -->
+  <servlet> 
+  	<servlet-name>springMybatis</servlet-name>
+  	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  	<init-param>
+  		<param-name>contextConfigLocation</param-name>
+  		<param-value>
+  			/WEB-INF/controller/board-servlet.xml
+  			/WEB-INF/controller/omi-servlet.xml
+  			/WEB-INF/controller/root-servlet.xml
+  			/WEB-INF/controller/aop-servlet.xml
+  		</param-value>
+   	</init-param>
+  </servlet>
+  
+  	<servlet-mapping>
+  		<servlet-name>springMybatis</servlet-name>
+  		<url-pattern>*.omi</url-pattern>
+  	</servlet-mapping>
+ 
+</web-app>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="omi">
+
+	<select id="cctv" resultType="omiVO" parameterType="int">
+		select * from cctv where geocode=#{areaCode}
+	</select>
+	
+	<select id="bicycle" resultType="traffic3VO" parameterType="int">
+		select * from traffic1 where code=#{areaCode}
+	</select>
+	
+	<select id="children" resultType="traffic3VO" parameterType="int">
+		select * from traffic2 where code=#{areaCode}
+	</select>
+	
+	<select id="roadkill" resultType="traffic3VO" parameterType="int">
+		select * from traffic3 where code=#{areaCode}
+	</select>
+	
+	<select id="wifi2" resultType="omiVO">
+		select * from wifi2
+	</select>
+	
+	<select id="areaCode" parameterType="String" resultType="int">
+      select code from geo where num=#{num}
+   </select>
+   
+   <!-- 추가 -->
+   <select id="localCode" parameterType="String" resultType="String">
+		select code from geo1 where name like '%'||#{name}||'%'
+   </select>
+   
+   <select id="SJlocalCode" parameterType="String" resultType="int">
+   		select code from geo1 where name like #{name}
+   </select>
+   <!-- -->
+   
+   <select parameterType="String" resultType="String" id="areaName"> 
+   		select name from geo where num=#{num} 
+   </select>
+   
+   <select id="area" resultType="omiVO">
+      select * from geo
+   </select>
+   <!-- 와이파이 -->
+
+	
+
+	<select resultType="geoInfoVO" id="geoInfo">
+	select * from geoInfo 
+	</select>
+	
+	<select id="public" resultType="omiVO" parameterType="int">
+    select * from pbst where code=#{areaCode}
+  	</select>
+  	
+  	<select id="geocode" resultType="int" parameterType="String">
+    select * from geo where code=#{geocode}
+    </select>
+    
+    <!-- 여기부터 추가 -->
+    <select id="articleList" resultType="boardVO" parameterType="hashmap">
+    <![CDATA[
+		select num,id,writer,subject,reg_date,ref,content,readcount,count,r
+		from (select num,id,writer,subject,reg_date,ref,content,readcount,count,rownum r
+		from (select num,id,writer,subject,reg_date,ref,content,readcount,count
+		from board order by ref desc) order by ref desc) where r >= #{start} and r <= #{end}
+		]]>
+    </select>
+    
+    <select id="count" resultType="int">
+		select count(*) from board
+	</select>
+	
+	<update id="readcount" parameterType="int">
+		update board set readcount=readcount+1 where num = #{num}
+	</update>
+	
+	<select id="content" parameterType="int" resultType="boardVO">
+		select * from board where num = #{num}
+	</select>
+	
+	<insert id="insert" parameterType="boardVO">
+		insert into board(num,id,writer,subject,data,reg_date,ref,content,local,x,y) values(board_seq.NEXTVAL,#{id},#{writer},#{subject},#{data},sysdate,#{ref},#{content},#{local},#{x},#{y})
+	</insert>
+	
+	<insert id="publicDataInsert" parameterType="omiVO">
+		insert into pbst(site, x, y, local, code) values(#{site},#{x},#{y},#{local},#{code})
+	</insert>
+	
+	<insert id="wifiDataInsert" parameterType="omiVO">
+		insert into wifi2(sido, gun, x, y, code, location) values(#{sido},#{gun}, #{x},#{y},#{code},#{location})
+	</insert>
+	
+	<insert id="cctvDataInsert" parameterType="omiVO">
+		insert into cctv(gg, addr, info, wedo, gyungdo, ggn, geocode) values(#{gg},#{addr}, #{info}, #{wedo},#{gyungdo}, #{ggn},#{geocode})
+	</insert>
+	
+	<select id="maxNum" resultType="int">
+		select max(ref) from board
+	</select>
+	
+	<select id="checkID" parameterType="int" resultType="String">
+		select id from board where num = #{num}
+	</select>
+	
+	<update id="updateArticle" parameterType="boardVO">
+		update board set subject=#{subject}, data=#{data}, content=#{content} where num=#{num}
+	</update>
+	
+	<delete id="deleteArticle" parameterType="int">
+		delete from board where num = #{num}
+	</delete>
+	
+	<update id="dataInsertCount" parameterType="int">
+		update board set count=count+1 where num = #{num}
+	</update>
+	
+	<delete id="deleteCctvArticleData" parameterType="hashmap">
+		delete from cctv where wedo = #{x} and gyungdo = #{y}
+	</delete>
+	
+	<delete id="deleteWifiArticleData" parameterType="hashmap">
+		delete from wifi2 where x = #{x} and y = #{y}
+	</delete>
+	
+	<delete id="deletePbstArticleData" parameterType="hashmap">
+		delete from pbst where x = #{x} and y = #{y}
+	</delete>
+	
+	<update id="resetCount" parameterType="int">
+		update board set count=0 where num = #{num}
+	</update>
+   
+</mapper>
